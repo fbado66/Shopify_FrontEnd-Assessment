@@ -1,8 +1,8 @@
 import React from 'react' 
 
 function Search(props) {
-    const handleInput = (evt) => {
-        props.finder(evt.target.value)
+    const handleResult = (evt) => {
+        props.movieSearchResults(evt.target.value)
     }
 
     return (
@@ -11,7 +11,7 @@ function Search(props) {
                 name='search'
                 className='search'
                 value={props.searchTerm}
-                onChange={handleInput}
+                onChange={handleResult}
             />
         </div>
     )

@@ -1,10 +1,9 @@
 import React from 'react' 
 
 function SearchResult(props) {
-    // console.log(props.resultArray)
+    console.log(props)
 
     const handleClick = (movie) => {
-        // console.log(movie)
         props.updateNominationList(movie)
     }
 
@@ -15,6 +14,7 @@ function SearchResult(props) {
                     <img src={movie.Poster !== "N/A" ? movie.Poster : 'https://vignette.wikia.nocookie.net/donatello-the-ninja-turtle/images/4/47/Placeholder.png/revision/latest?cb=20190403161112'}/>
             
                     <button
+                        disabled = {props.disabledButton}
                         onClick = { () => handleClick(movie) }
                         type = 'submit'>
                         Nominate 
