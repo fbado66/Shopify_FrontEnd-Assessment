@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,57 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+
+.cardLayout {
+  padding: 0% 15%;
+  columns: 2;
 }
+
+.cardElement {
+  
+  margin: 10px;
+  display: inline-flex
+}
+
+.cardElement img {
+  width: 150px;
+}
+
+
+.green {
+  background: green;
+}
+
+.purple {
+  background: purple;
+}
+
+.grid-container {
+  /* display: grid; */
+  /* flex-direction: row;
+  flex: 1; */
+  /* grid-template-columns: 1fr 7fr;
+  grid-gap: 2%; */
+  height: 200px;
+  margin: 15px 8%; 
+  width: 38%;
+  min-width: 350px;
+  border: red solid 1px
+}
+
+.imageHolder img {
+  padding: 2%;
+  width: 140px;
+  height: 198px;
+}
+
+.search {
+  padding-bottom: 40px;
+}
+
+
+
+

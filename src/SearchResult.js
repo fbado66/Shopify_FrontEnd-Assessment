@@ -1,34 +1,39 @@
 import React from 'react' 
+import { Grid, Button } from 'semantic-ui-react';
 
 function SearchResult(props) {
-    console.log(props)
 
     const handleClick = (movie) => {
         props.updateNominationList(movie)
     }
 
+    const checkForDuplicates = (movie) => {
+        return !!props.nominationList.find(mv => mv.imdbID === movie.imdbID)
+    }
+
+
     let MovieResults = props.resultArray.map(movie => {
         return <div key={movie.Title + movie.Poster}>
-                    <h1>{movie.Title}</h1>
-                    <p>{movie.Year}</p>
-                    <img src={movie.Poster !== "N/A" ? movie.Poster : 'https://vignette.wikia.nocookie.net/donatello-the-ninja-turtle/images/4/47/Placeholder.png/revision/latest?cb=20190403161112'}/>
-            
-                    <button
-                        disabled = {props.disabledButton}
-                        onClick = { () => handleClick(movie) }
-                        type = 'submit'>
-                        Nominate 
-                    </button>  
-            
+                    <div class="grid-container">
+                        <div class="imageHolder">
+                            <img src={movie.Poster !== "N/A" ? movie.Poster : './assets/image_placeholder.jpeg'}
+                                alt={movie.Title} />
+                        </div>
+                        <div class="infoHolder">
+                            <p>{movie.Title} <em>({movie.Year})</em></p>
+                            <Button variant="primary"
+                                    disabled = {props.disabledButton ? true : checkForDuplicates(movie)}
+                                    onClick = {() => handleClick(movie)} >
+                                    Nominate
+                            </Button>
+                        </div>
+                    </div>    
                 </div>
     })
-
-        // "./assets/name-image.png"
-
+    
     return (
-        <div>
-            {MovieResults}
-        </div>
+    <div>
+        <Grid doubling columns={3} id='NewGrid'> {MovieResults}</Grid>  </div> 
     )
 }
 

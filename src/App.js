@@ -3,17 +3,20 @@ import Search from './Search'
 import SearchResult from './SearchResult'
 import Nominations from './Nominations'
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
+
 
 class App extends React.Component {
 
   state = {
+   
     movieList: [],
     nominationList: [],
     disabledButton: false
   }
 
   searchingForMovies = (term) => {
-    // console.log(term)
+    console.log(term)
     let searchTerm = term.split(' ').join('%20')
     fetch(`http://omdbapi.com/?i=tt3896198&apikey=b8977260&s=${searchTerm}`)
     .then(response => response.json())
@@ -23,8 +26,14 @@ class App extends React.Component {
         this.setState({ movieList: moviesResults.Search })
         // this.displayMovies(moviesResults.Search)
       }else {
-        console.log("The Search returns no result")
+        this.setState({movieList: []})
       }
+    })
+  }
+
+  updateMovieSearch = (searchTerm) => {
+    this.setState({
+      movieSearch: searchTerm
     })
   }
 
@@ -86,6 +95,7 @@ class App extends React.Component {
             movieSearchResults = {this.searchingForMovies}
           />
           <SearchResult 
+            nominationList = {this.state.nominationList}
             disabledButton = {this.state.disabledButton}
             resultArray = {this.state.movieList}
             updateNominationList={this.updateNominationList}

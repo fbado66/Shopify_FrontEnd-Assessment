@@ -15,10 +15,10 @@ function Nominations(props) {
                         type = 'submit'>
                         Remove
                     </button>
+
                 </div>
     })
 
-    // console.log(userNominationList.length)
     return (
         <div>
             <h1>Nominations</h1>
