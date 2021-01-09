@@ -83,9 +83,27 @@
 }
 
 .search {
-  padding-bottom: 40px;
+    border: 2px solid blue;
+    width: 60%;
+    margin-bottom: 35px;
+    margin-top: 20px;
+    font-weight: 700;
+    opacity: 60%;
+    margin: auto 20%;
+    padding: 12px;
+    border-radius: 12px;
+    position: relative;
+
 }
 
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none
+}
 
 
 

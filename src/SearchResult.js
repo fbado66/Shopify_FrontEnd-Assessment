@@ -1,5 +1,5 @@
 import React from 'react' 
-import { Grid, Button } from 'semantic-ui-react';
+import { Grid, Button, Loader } from 'semantic-ui-react';
 
 function SearchResult(props) {
 
@@ -10,7 +10,6 @@ function SearchResult(props) {
     const checkForDuplicates = (movie) => {
         return !!props.nominationList.find(mv => mv.imdbID === movie.imdbID)
     }
-
 
     let MovieResults = props.resultArray.map(movie => {
         return <div key={movie.Title + movie.Poster}>
@@ -33,7 +32,9 @@ function SearchResult(props) {
     
     return (
     <div>
-        <Grid doubling columns={3} id='NewGrid'> {MovieResults}</Grid>  </div> 
+        {props.loading ? (<Loader active size='big' inline='centered'/>) : props.loading }
+        <Grid doubling columns={3} id='NewGrid'> {MovieResults}</Grid>  
+    </div> 
     )
 }
 

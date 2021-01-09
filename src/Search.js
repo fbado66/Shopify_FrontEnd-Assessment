@@ -13,6 +13,15 @@ function Search(props) {
                 className='search'
                 value={props.searchTerm}
                 onChange={handleResult}
+                placeholder='Search for movie'
+
+
+                // <p id='search_header'>Search Restaurants closest to you</p>
+                // <GoogleComponent
+                //     apiKey = {API_KEY}
+                //     language = {'en'}
+                //     country = {'country:us'}
+                //     coordinates = {true}
             />
         </div>
     )

@@ -6,14 +6,16 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 
 
+
 class App extends React.Component {
 
   state = {
-   
     movieList: [],
     nominationList: [],
-    disabledButton: false
+    disabledButton: false,
+    loading: ''
   }
+
 
   searchingForMovies = (term) => {
     console.log(term)
@@ -23,10 +25,12 @@ class App extends React.Component {
     .then(moviesResults => {
       if(term && moviesResults.Response === 'True'){
         // React this.setState is not a function
-        this.setState({ movieList: moviesResults.Search })
+        this.setState({ movieList: moviesResults.Search, loading: false })
         // this.displayMovies(moviesResults.Search)
+      }else if (!term) {
+        this.setState({loading: false})
       }else {
-        this.setState({movieList: []})
+        this.setState({movieList: [], loading: true})
       }
     })
   }
@@ -36,7 +40,6 @@ class App extends React.Component {
       movieSearch: searchTerm
     })
   }
-
 
   updateNominationList = (newMovie) => {
     console.log(newMovie)
@@ -95,6 +98,7 @@ class App extends React.Component {
             movieSearchResults = {this.searchingForMovies}
           />
           <SearchResult 
+          loading = {this.state.loading}
             nominationList = {this.state.nominationList}
             disabledButton = {this.state.disabledButton}
             resultArray = {this.state.movieList}
