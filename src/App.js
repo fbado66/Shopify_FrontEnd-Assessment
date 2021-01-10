@@ -2,9 +2,8 @@ import React from 'react';
 import Search from './Search'
 import SearchResult from './SearchResult'
 import Nominations from './Nominations'
-import './App.css';
 import 'semantic-ui-css/semantic.min.css'
-
+import './App.css';
 
 
 class App extends React.Component {
@@ -13,7 +12,8 @@ class App extends React.Component {
     movieList: [],
     nominationList: [],
     disabledButton: false,
-    loading: ''
+    loading: '',
+    NominationMessage: '',
   }
 
 
@@ -45,7 +45,8 @@ class App extends React.Component {
     console.log(newMovie)
     let copyOfNominationList = [...this.state.nominationList, newMovie]
     this.setState({
-      nominationList: copyOfNominationList
+      nominationList: copyOfNominationList,
+      NominationMessage: `You have ${this.state.nominationList.length + 1} movies`
     })
     localStorage.setItem('nominations', JSON.stringify(
       [...this.state.nominationList, newMovie]
@@ -55,7 +56,8 @@ class App extends React.Component {
   removeNominationList = (movieToRemove) => {
     let filterMovies = this.state.nominationList.filter(movie => movie.imdbID !== movieToRemove.imdbID )
     this.setState({ 
-      nominationList: [...filterMovies]
+      nominationList: [...filterMovies],
+      NominationMessage: `You have ${this.state.nominationList.length - 1} movies`
     })
     localStorage.setItem('nominations', JSON.stringify(
       [...filterMovies]
@@ -71,6 +73,17 @@ class App extends React.Component {
     }
   }
 
+  updateNominationMessage = () => {
+      this.setState({
+        NominationMessage: 'You have 5 movies in total'
+      })
+    
+  }
+
+  message = () => {
+    'This is a test'
+
+  }
   // FUNCTION THAT WILL DISPLAY MESSAGE AND RUN A SET TIME OUT TO SET THE BOOLEAN BACK TO FALSE TO HIDE THE MESSAGE
   // {
     // SET BOOL TO TRUE
@@ -79,10 +92,15 @@ class App extends React.Component {
 
   componentDidUpdate = (prevState) => { 
     if(this.state.nominationList.length === 5 && this.state.disabledButton !== true){
+      setTimeout(() => this.setState({ message: true}), 3000)
+      // this.updateNominationMessage(setTimeout(1000))
       // SETUP A FUNCTION TO RUN A SETTIMEOUT TO DISPLAY A MESSAGE FOR n SECONDS - BOOLEAN VAR
       this.setState(prevState =>({ disabledButton: !prevState.disabledButton }))
 
     } else if (this.state.nominationList.length < 5 && this.state.disabledButton !== false) {
+      // this.updateNominationMessage(setTimeout(1000))
+
+
       this.setState(prevState => ({ disabledButton: !prevState.disabledButton }))
     }
   }
@@ -90,13 +108,20 @@ class App extends React.Component {
 
   render (){
     
+    
     return (
       <div>
+        <p>{this.state.NominationMessage}</p>
         {/* A DIV TO DISPLAY A MESSAGE - HIDE DIV AND SHOW BASED ON A BOOLEAN VARIABLE - TRUE/FALSE */}
-        <h1> The Shoopies</h1>
+        <h1> The Shoopies Movie Awards</h1>
+        <Nominations 
+          removeNominationList = {this.removeNominationList}
+            nominationList = {this.state.nominationList}
+         />
           <Search 
             movieSearchResults = {this.searchingForMovies}
           />
+          
           <SearchResult 
           loading = {this.state.loading}
             nominationList = {this.state.nominationList}
@@ -104,10 +129,7 @@ class App extends React.Component {
             resultArray = {this.state.movieList}
             updateNominationList={this.updateNominationList}
           />
-          <Nominations 
-          removeNominationList = {this.removeNominationList}
-            nominationList = {this.state.nominationList}
-         />
+          
       </div>
     )
   }

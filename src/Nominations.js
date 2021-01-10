@@ -1,4 +1,6 @@
 import React from 'react' 
+import { Grid, Button, Loader, Container, Segment } from 'semantic-ui-react';
+
 
 function Nominations(props) {
 
@@ -7,22 +9,29 @@ function Nominations(props) {
     }
 
     let userNominationList = props.nominationList.map(movie => {
-        return <div key={movie.Poster}>
-                    <h2>{movie.Title}</h2> 
-                    <img src={movie.Poster} />
-                    <button
+        return <div key={movie.Poster} className='NominationListHolder'>
+                    <img src={movie.Poster !== "N/A" ? movie.Poster : './assets/image_placeholder.jpeg'}
+                        alt={movie.Title} />   
+                    <p>{movie.Title}</p> 
+                    <p>{movie.Year}</p>
+                    <Button
+                        color = 'red'
                         onClick = {() => handleRemove(movie)}
                         type = 'submit'>
                         Remove
-                    </button>
+                    </Button>
 
                 </div>
     })
 
+    
+
     return (
         <div>
-            <h1>Nominations</h1>
-            {userNominationList}
+            
+            <div className='NominationListGrid'>{userNominationList}</div>  
+
+            
         </div>
     )
 }

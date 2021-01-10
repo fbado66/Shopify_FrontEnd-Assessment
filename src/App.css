@@ -39,6 +39,8 @@
 
 
 
+
+
 .cardLayout {
   padding: 0% 15%;
   columns: 2;
@@ -55,55 +57,122 @@
 }
 
 
-.green {
-  background: green;
-}
-
-.purple {
-  background: purple;
-}
-
-.grid-container {
-  /* display: grid; */
-  /* flex-direction: row;
-  flex: 1; */
-  /* grid-template-columns: 1fr 7fr;
-  grid-gap: 2%; */
+.gridContainer {
+  display: flex;
+  background: #f3f3f3;
+  align-items: center;
   height: 200px;
-  margin: 15px 8%; 
-  width: 38%;
-  min-width: 350px;
-  border: red solid 1px
+  margin: 12px auto;
+  /* margin: 4%; */
+  width: 330px;
+  min-width: 330px;
+  border-radius: 5px;
+  opacity: .8;
+}
+
+.gridContainer:hover {
+  opacity: 1;
 }
 
 .imageHolder img {
   padding: 2%;
   width: 140px;
   height: 198px;
+  margin: 4px 5px 0px 3px;
+  border-radius: 6px;
 }
 
-.search {
-    border: 2px solid blue;
+
+
+.searchBar {
+    border: 1px solid black;
     width: 60%;
-    margin-bottom: 35px;
     margin-top: 20px;
-    font-weight: 700;
+    font-weight: 500;
     opacity: 60%;
-    margin: auto 20%;
+    margin: 0 4px 0% 20%;
     padding: 12px;
     border-radius: 12px;
-    position: relative;
-
+    text-align: center;
 }
 
+.searchComponent {
+  display: flex;
+}
 
-.show {
+#searchIcon {
+  padding-top: 7px;
+}
+
+.infoHolder {
+  margin: 10px;
+  height: 200px;
+  width: 100%;
+
+}
+.infoHolder p{
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.infoHolder .ui.button {
+  margin: 0 auto;
   display: block;
+  /* background-color: #3976dc; */
+
 }
 
-.hide {
-  display: none
+.NominationListHolder {
+  margin-bottom: 20px;
+  height: 300px;
+  width: 200px;
+  background: yellow;
+  padding: 5px
 }
 
+.NominationListHolder img {
+  width: 130px;
+  height: 160px;
+  padding: 5px;
+}
 
+.NominationListHolder:hover img{
+  width: 150px;
+  height: 170px;
+}
 
+.NominationListGrid {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  margin: 2% 5%;
+  overflow: hidden;
+
+}
+
+.cssGrid {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: 2% 5%;
+  overflow: hidden;
+
+}
+
+@media screen and (max-width: 1550px) {
+  .cssGrid {
+    grid-template-columns: 33.3% 33.3% 33.3%;
+  }
+}
+
+@media screen and (max-width: 1155px) {
+  .cssGrid {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .cssGrid {
+    grid-template-columns: 100%;
+  }
+}

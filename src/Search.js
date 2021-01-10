@@ -1,28 +1,24 @@
 import React from 'react' 
+import { Icon } from 'semantic-ui-react';
+
+
+
 
 function Search(props) {
     const handleResult = (evt) => {
-        console.log(evt.target.value)
+        // console.log(evt.target.value)
         props.movieSearchResults(evt.target.value)
     }
 
     return (
-        <div>
+        <div className='searchComponent'>
             <input type='text'
                 name='search'
-                className='search'
+                className='searchBar'
                 value={props.searchTerm}
                 onChange={handleResult}
-                placeholder='Search for movie'
-
-
-                // <p id='search_header'>Search Restaurants closest to you</p>
-                // <GoogleComponent
-                //     apiKey = {API_KEY}
-                //     language = {'en'}
-                //     country = {'country:us'}
-                //     coordinates = {true}
-            />
+                placeholder='Search for movie'/>
+            <Icon id='searchIcon' size='large' color='red' name='search'/>
         </div>
     )
 }

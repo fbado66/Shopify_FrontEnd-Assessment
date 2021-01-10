@@ -1,5 +1,5 @@
 import React from 'react' 
-import { Grid, Button, Loader } from 'semantic-ui-react';
+import { Grid, Button, Loader, Container, Segment } from 'semantic-ui-react';
 
 function SearchResult(props) {
 
@@ -13,27 +13,31 @@ function SearchResult(props) {
 
     let MovieResults = props.resultArray.map(movie => {
         return <div key={movie.Title + movie.Poster}>
-                    <div class="grid-container">
-                        <div class="imageHolder">
+           
+                    <div className='gridContainer'>
+                        <div className="imageHolder">
                             <img src={movie.Poster !== "N/A" ? movie.Poster : './assets/image_placeholder.jpeg'}
                                 alt={movie.Title} />
                         </div>
-                        <div class="infoHolder">
+                        <div className="infoHolder">
                             <p>{movie.Title} <em>({movie.Year})</em></p>
-                            <Button variant="primary"
+                            <Button primary
                                     disabled = {props.disabledButton ? true : checkForDuplicates(movie)}
                                     onClick = {() => handleClick(movie)} >
                                     Nominate
                             </Button>
                         </div>
-                    </div>    
+                    </div> 
+                     
                 </div>
     })
     
     return (
     <div>
         {props.loading ? (<Loader active size='big' inline='centered'/>) : props.loading }
-        <Grid doubling columns={3} id='NewGrid'> {MovieResults}</Grid>  
+        {/* <Grid columns={1} id='NewGrid'>{MovieResults}</Grid>   */}
+        <div className='cssGrid'>{MovieResults}</div>  
+
     </div> 
     )
 }
