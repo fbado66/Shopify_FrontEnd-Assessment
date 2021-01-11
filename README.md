@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# The Shoopies Movie Awards! 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is short one page web application that allows the user to search for movies, nominate them, and have a list of a total of five nominations.
 
-## Available Scripts
+<img src='public/assets/images/shoppies.png' alt='shoopies'>
+<br>
 
-In the project directory, you can run:
+User will be able to search from a OMDb API that will yield results of movies with titles, years, and posters. <br>
+While the search is happening, the movies will be render onto the page for the user to pick, if no results are being render, then a loader spinner will show on the page. <br> The user can have a list of up to 5 nominations. This list is editable, user can add, and remove from it. Once the Nomination list has a total of 5 movies, a banner will show, alerting the user that the limit has been reached.
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## A Walkthrough on this app
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+link for video with an image -- Demo -- 
 
-### `yarn test`
+The first thing you will see when using this application is the search bar in the page. 
+<img src='public/assets/images/startingApp.png' alt='search_bar'>
+<br>
+This is prompting the user to search for movies, as soonest the search is ignite, the system will either show the results, or if the results are yet to be fetch, it will show a loader spinner 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src='public/assets/images/loaderSpinner.png' alt='loader_spinner'>
+<img src='public/assets/images/fetchingResults.png' alt='movie_results'>
 
-### `yarn build`
+<br>
+Users can add the movie of thier choice into the Nomination List as such 
+<img src='public/assets/images/addingToNomination.png' alt='Adding_Movies_to_Nomination_list'>
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+They can update the Nomination list by removing movies as well 
+<img src='public/assets/images/nominationList.png' alt='updating_Nomination_list'>
+Once the Nomination List has a total of 5 movies, a banner will appear alerting the user that a limit has be reached for the Nomination list 
+<img src='public/assets/images/reachLimitNomination.png' alt='Limit_on_Nominations'>
+<br>
+<img src='public/assets/images/allDevices.png' alt='layout_all_devices'>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Visit the Deploy site
 
-### `yarn eject`
+link will go here
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technical Overview
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project was build with React.Js and elements from Semantic UI.<br>
+There is a great use of 'localStorage' to save the nomination list result even if the user leaves the page, or reloads it.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
