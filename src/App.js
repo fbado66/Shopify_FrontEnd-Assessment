@@ -20,7 +20,7 @@ class App extends React.Component {
 
   searchingForMovies = (term) => {
     let searchTerm = term.split(' ').join('%20')
-    fetch(`http://omdbapi.com/?i=tt3896198&apikey=b8977260&s=${searchTerm}`)
+    fetch(`https://omdbapi.com/?i=tt3896198&apikey=b8977260&s=${searchTerm}`)
     .then(response => response.json())
     .then(moviesResults => {
       if(term && moviesResults.Response === 'True'){
