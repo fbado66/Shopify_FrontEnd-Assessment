@@ -1,12 +1,8 @@
 import React from 'react' 
 import { Icon } from 'semantic-ui-react';
 
-
-
-
 function Search(props) {
     const handleResult = (evt) => {
-        // console.log(evt.target.value)
         props.movieSearchResults(evt.target.value)
     }
 
@@ -17,7 +13,7 @@ function Search(props) {
                 className='searchBar'
                 value={props.searchTerm}
                 onChange={handleResult}
-                placeholder='Search for movie'/>
+                placeholder='Search movies'/>
             <Icon id='searchIcon' size='large' color='red' name='search'/>
         </div>
     )
