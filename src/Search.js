@@ -10,7 +10,6 @@ function Search(props) {
         <form id='searchComponent' name="findMovies" data-netlify="true">
             <input type='text'
                 name='search'
-                // className='searchBar'
                 // value={props.searchTerm}
                 onChange={handleResult}
                 placeholder='Search movies'/>

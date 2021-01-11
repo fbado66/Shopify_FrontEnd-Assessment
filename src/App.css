@@ -79,20 +79,20 @@
 
 /* Search Component Style */
 form > input {
-  border: 2px solid gray;
+  border: 2px solid #808080b3;
   width: 60%;
   margin-top: 20px;
   font-weight: 500;
-  opacity: 60%;
+  color: #0000009f;
   margin: 0 4px 0% 20%;
   padding: 12px;
   border-radius: 12px;
   text-align: center;
 }
 
-/* #searchComponent {
+#searchComponent {
   display: flex;
-} */
+}
 
 #searchIcon {
   padding-top: 7px;
