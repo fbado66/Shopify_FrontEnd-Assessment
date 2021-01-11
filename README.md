@@ -25,12 +25,14 @@ This is prompting the user to search for movies, as soonest the search is ignite
 Users can add the movie of thier choice into the Nomination List as such 
 <img src='public/assets/images/addingToNomination.png' alt='Adding_Movies_to_Nomination_list'>
 <br>
-
-They can update the Nomination list by removing movies as well 
+they can update the Nomination list by removing movies as well. 
 <img src='public/assets/images/nominationList.png' alt='updating_Nomination_list'>
+<br>
 Once the Nomination List has a total of 5 movies, a banner will appear alerting the user that a limit has be reached for the Nomination list 
 <img src='public/assets/images/reachLimitNomination.png' alt='Limit_on_Nominations'>
 <br>
+<br>
+This is an application that can be use in all devices
 <img src='public/assets/images/allDevices.png' alt='layout_all_devices'>
 
 
