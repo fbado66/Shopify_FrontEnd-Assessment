@@ -7,7 +7,7 @@ function Search(props) {
     }
 
     return (
-        <form className='searchComponent' name='myForm'>
+        <form id='searchComponent' name="findMovies" data-netlify="true">
             <input type='text'
                 name='search'
                 className='searchBar'

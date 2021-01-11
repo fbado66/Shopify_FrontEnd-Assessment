@@ -79,7 +79,7 @@
 
 /* Search Component Style */
 .searchBar {
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
   width: 60%;
   margin-top: 20px;
   font-weight: 500;
@@ -90,7 +90,7 @@
   text-align: center;
 }
 
-.searchComponent {
+#searchComponent {
   display: flex;
 }
 
