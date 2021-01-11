@@ -78,21 +78,21 @@
 
 
 /* Search Component Style */
-.searchBar {
+form > input {
   /* border: 2px solid gray; */
   width: 60%;
   margin-top: 20px;
   font-weight: 500;
-  opacity: 60%;
+  /* opacity: 60%; */
   margin: 0 4px 0% 20%;
   padding: 12px;
   border-radius: 12px;
   text-align: center;
 }
 
-#searchComponent {
+/* #searchComponent {
   display: flex;
-}
+} */
 
 #searchIcon {
   padding-top: 7px;
