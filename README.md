@@ -1,4 +1,4 @@
-# The Shoppies Movie Awards! 
+# The Shoopies Movie Awards! 
 
 This is short one page web application that allows the user to search for movies, nominate them, and have a list of a total of five nominations.
 
@@ -38,7 +38,7 @@ This is an application that can be use in all devices
 
 ## Visit the Deploy site
 
-<a href='https://the-shoopies-awards.netlify.app/'>The Shoppies Movie Awards </a>
+<a href='https://the-shoopies-awards.netlify.app/'>The Shoopies Movie Awards </a>
 
 ## Technical Overview
 
