@@ -1,8 +1,8 @@
-# The Shoopies Movie Awards! 
+# The Shoppies Movie Awards! 
 
 This is short one page web application that allows the user to search for movies, nominate them, and have a list of a total of five nominations.
 
-<img src='public/assets/images/shoppies.png' alt='shoopies'>
+<a href='https://the-shoopies-awards.netlify.app/'><img src='public/assets/images/shoppies.png' alt='shoopies'></a>
 <br>
 
 User will be able to search from a OMDb API that will yield results of movies with titles, years, and posters. <br>
@@ -38,7 +38,7 @@ This is an application that can be use in all devices
 
 ## Visit the Deploy site
 
-link will go here
+<a href='https://the-shoopies-awards.netlify.app/'>The Shoppies Movie Awards </a>
 
 ## Technical Overview
 
