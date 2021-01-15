@@ -31,7 +31,7 @@ function SearchResult(props) {
     
     return (
             <div>
-                {props.loading ? (<Loader active size='big' inline='centered'/>) : props.loading }
+                {props.loading ? (<div className='loaderSpinner'><Loader active size='big' inline='centered'/></div>) : props.loading }
                     <div className='gridSearchResult'>{MovieResults}</div>  
             </div> 
     )

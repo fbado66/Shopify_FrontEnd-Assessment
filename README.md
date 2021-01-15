@@ -1,6 +1,6 @@
 # The Shoopies Movie Awards! 
 
-This is short one page web application that allows the user to search for movies, nominate them, and have a list of a total of five nominations.
+The Shoopies Movie Award is an one page web application that allows the user to search for movies, nominate them, and have a list of a total of five nominations.
 
 <a href='https://the-shoopies-awards.netlify.app/'><img src='public/assets/images/shoppies.png' alt='shoopies'></a>
 <br>
@@ -10,8 +10,6 @@ While the search is happening, the movies will be render onto the page for the u
 
 
 ## A Walkthrough on this app
-
-link for video with an image -- Demo -- 
 
 The first thing you will see when using this application is the search bar in the page. 
 <img src='public/assets/images/startingApp.png' alt='search_bar'>

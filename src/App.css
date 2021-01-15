@@ -15,7 +15,7 @@
 .totalNomMoviesMsg {
   text-align: center;
   margin: 0 3% 3% 0;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .bannerLimit {
@@ -41,6 +41,10 @@
 
 .gridContainerSearch:hover {
   opacity: 1;
+}
+
+.loaderSpinner {
+  margin-top: 7px;
 }
 
 .imageHolder img {
